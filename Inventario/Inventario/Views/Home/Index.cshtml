@@ -1,8 +1,22 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<br />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form class="form-control me-2">
+                <div class="p-3 border bg-light">
+                    <a asp-controller="Computer" asp-action="List" style="text-decoration:wavy"><img src="~/images/lista-de-itens.png" style="width: 50px" /> &ensp; LISTA DE COMPUTADORES</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br />
+    <div class="col">
+        <form class="form-control me-2" asp-controller="Computer" asp-action="Search" method="get">
+            <div class="d-flex p-3 border bg-light">
+                <input type="text" class="form-control" placeholder="Procurar PC" name="searchString" value="@ViewData["searchString"]" style="width:20em" />&ensp;
+                <button class="btn btn-outline-success" type="submit">Procurar</button>
+            </div>
+        </form>
+    </div>
 </div>

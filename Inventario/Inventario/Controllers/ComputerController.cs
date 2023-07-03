@@ -13,7 +13,7 @@ namespace Inventario.Controllers
             _computerRepository = computerRepository;
         }
 
-        public IActionResult List()
+        public IActionResult List(int pagina = 1)
         {
             var computers = _computerRepository.Computers.OrderBy(c => c.ComputerId);
             return View(computers);
@@ -44,6 +44,21 @@ namespace Inventario.Controllers
             }
 
             return View(computador);
+        }
+
+        public IActionResult Search(string searchString)
+        {
+            string _searchString = searchString;
+            Computer computador;
+
+            if (!string.IsNullOrEmpty(_searchString))
+            {
+                computador = _computerRepository.GetComputerByComputerId(_searchString);
+                return View("~/Views/Computer/Details.cshtml", computador);
+            }
+
+            ViewBag.Data = "Não encontrado";
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }
