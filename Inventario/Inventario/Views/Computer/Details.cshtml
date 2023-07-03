@@ -1,0 +1,41 @@
+﻿@model Inventario.Models.Computer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+<br />
+<div>
+    <h4>Computador: @Model.ComputerId</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hostname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hostname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Local)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Local)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ip)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ip)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mac)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mac)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="List">Voltar para lista</a>
+</div>

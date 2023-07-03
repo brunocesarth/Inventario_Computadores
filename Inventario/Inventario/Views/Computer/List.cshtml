@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Computer>
+
+<div><h2>Lista de Computadores</h2></div>
+<br />
+
+<table class="table table-bordered table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>Id do Computador</th>
+            <th>Hostname</th>
+            <th>Local</th>
+            <th>Ip</th>
+            <th>Mac-Address</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Computer computer in Model)
+        {
+            <tr>
+                <td>@computer.ComputerId</td>
+                <td>@computer.Hostname</td>
+                <td>@computer.Local</td>
+                <td>@computer.Ip</td>
+                <td>@computer.Mac</td>
+                <td><a asp-controller="Computer" asp-action="details" asp-route-computerId="@computer.ComputerId">Detalhes</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
