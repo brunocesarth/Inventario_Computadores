@@ -57,7 +57,7 @@ namespace Inventario.Controllers
                 return View("~/Views/Computer/Details.cshtml", computador);
             }
 
-            ViewBag.Data = "Não encontrado";
+            ViewData["Message"] = "Não encontrado";
             return View("~/Views/Home/Index.cshtml");
         }
     }
